@@ -61,10 +61,18 @@ code {
 }
 
 a {
-    color: #BB9966;
+    color: #88DDFF;
 }
 a:hover {
-    color: #AADDFF;
+    color: #BB9966;
+}
+
+.footnote-ref {
+    text-decoration-line: line-through;
+    color: #BB9966;
+}
+.footnote-ref:hover {
+    color: #88DDFF;
 }
 
 hr {
