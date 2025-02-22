@@ -36,6 +36,7 @@ html, body {
 
 body {
     background-color: #221811;
+    /* background-color: #191007; */
     color: white;
     font-family: baskerville;
     
@@ -52,7 +53,8 @@ h2, h4, h5, h6 {
 h3 {
     font-family: liberation-bold;
     letter-spacing: -0.022em;
-    color: #DB6913;
+    /* color: #DB6913; */
+    color: #AA6633;
 }
 
 h1 {
@@ -94,7 +96,7 @@ hr {
     /* background: linear-gradient(to right, #DB6913, #3388AA); */
     /* OLD CYAN WAS: #bbF3FF */
     /* background: linear-gradient(to right, #DB6913, #88DDFF); */
-    background: linear-gradient(to right, #DB6913, #55AAAA);
+    background: linear-gradient(to right, #AA6633, #55AAAA);
     height: 1px;
     border: 0;
 }
@@ -142,6 +144,9 @@ pre {
     #inpage-toc {
         display: none;
     }
+    header h1 {
+        padding-left: 10px;
+    }
 }
 @media (min-width: 768px) {
     #menu-toc {
@@ -173,6 +178,9 @@ pre {
     position: fixed;
     right: 0;
 }
+#menu-toc .TOC {
+    margin-right: 0px;
+}
 
 .TOC h3 {
     font-family: baskerville;
@@ -182,7 +190,8 @@ pre {
     float: right;
     padding: 10px;
     margin: 5px;
-    background-color: #181207;
+    /* background-color: #181207; */
+    background-color: #191007;
     padding-top: 2px;
     padding-right: 15px;
     min-width: 250px;
