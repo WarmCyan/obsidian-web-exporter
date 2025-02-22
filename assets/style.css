@@ -71,7 +71,9 @@ hr {
     color: #BB9966;
 }
 .fancy-hr {
-    background: linear-gradient(to right, #DB6913, #3388AA);
+    /* background: linear-gradient(to right, #DB6913, #3388AA); */
+    /* OLD CYAN WAS: #bbF3FF */
+    background: linear-gradient(to right, #DB6913, #88DDFF);
     height: 1px;
     border: 0;
 }
@@ -102,6 +104,14 @@ main {
 footer {
     /* flex-shrink: 0; */
     width: 100%;
+}
+
+pre {
+    /* background-color: #101618; */
+    padding: 15px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-left: 2px solid #88DDFF;
 }
 
 /* hide in page TOC when small screen */
