@@ -52,7 +52,7 @@ def process():
         with open(f"notes/{filename}", 'r') as infile:
             lines = infile.readlines()
 
-        # get yaml if there
+        # read yaml metadata at top if it exists
         yaml_lines = []
         i = 0
         if lines[0] == "---\n":
@@ -118,6 +118,7 @@ def process():
                 title_found = True
             if line == "---":
                 break
+        # use name by default if no title
         if not title_found:
             lines.insert(1, f"title: {file_to_name[filename]}")
 
