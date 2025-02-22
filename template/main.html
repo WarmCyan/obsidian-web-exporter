@@ -1,39 +1,60 @@
+<!DOCTYPE html>
 <html>
     <head>
         <title>$title$</title>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <!-- TODO: stylesheet link -->
+        <link rel="stylesheet" href="$res_path$/style.css" />
     </head>
 
     <body>
         <header>
-            <h1>WarmCyan</h1>
-            <hr />
+            <h1><a href='$index_path$.html'><span style='color: #DB6913; font-family: baskerville; font-size: 35px;'>Warm</span><span style='font-family: victor-mono; color: #BBF3FF;'>Cyan</span></a></h1>
+
+            $if(toc)$
+            <label id='nav-hamburger-icon' for="nav-hamburger">
+                <svg viewBox="0 0 100 80" width="40" height="40">
+                    <rect width="80" height="12"></rect>
+                    <rect y="30" width="80" height="12"></rect>
+                    <rect y="60" width="80" height="12"></rect>
+                </svg>
+            </label>
+            <input type="checkbox" id="nav-hamburger" checked />
+            <aside id='menu-toc'>
+                <nav class="TOC" role="doc-toc">
+                <h3>Contents</h3>
+                $table-of-contents$
+                </nav>
+            </aside>
+            $endif$
+            
+            <hr class='fancy-hr' />
         </header>
 
-        $if(toc)$
-        <nav id="$idprefix$TOC" role="doc-toc">
-        $if(toc-title)$
-        <h2 id="$idprefix$toc-title">$toc-title$</h2>
-        $endif$
-        $table-of-contents$
-        </nav>
-        $endif$
+        <div id='container'>
+            $if(toc)$
+            <nav id="inpage-toc" class="TOC" role="doc-toc">
+            <h3>Contents</h3>
+            $table-of-contents$
+            </nav>
+            $endif$
 
-        <main>
-            $body$
-        </main>
+            <main>
+                $body$
+            </main>
+        </div>
 
         <footer>
+            <hr class='fancy-hr' />
+
             $if(backlinks)$
-            <h3>Backlinks</h3>
-            <ul>
+            <p class='backlinks-list'><b>Backlinks: </b>
             $for(backlinks)$
-            <li><a href="$backlinks.url$.html">$backlinks.name$</a></li>
+            <a href="$backlinks.url$.html">$backlinks.name$</a>&nbsp;|&nbsp;
             $endfor$
-            </ul>
+            </p>
             $endif$
+
         </footer>
     </body>
 </html>

@@ -1,0 +1,185 @@
+
+/* libre baskerville is licensed under SIL Open Font License, see
+ * full text at res/fonts/baskerville/LICENSE.txt */
+@font-face {
+    font-family: baskerville;
+    src:
+        url("fonts/baskerville/LibreBaskerville-Regular.ttf") format("truetype"),
+        local("serif");
+}
+
+/* liberation sans is licensed under SIL Open Font License, see
+ * full text at res/fonts/liberation/LICENSE.txt */
+@font-face {
+    font-family: liberation-bold;
+    src:
+        url("fonts/liberation/LiberationSans-Bold.ttf") format("truetype"),
+        local("sans-serif");
+}
+
+/* victor mono is licensed under SIL Open Font License, see
+ * full text at res/fonts/victor/LICENSE.txt */
+@font-face {
+    font-family: victor-mono;
+    src:
+        url("fonts/victor/VictorMono-Light.ttf") format("truetype"),
+        local("mono");
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    width: 100;
+}
+
+body {
+    background-color: #221811;
+    color: white;
+    font-family: baskerville;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+h2, h3, h4, h5, h6 {
+    font-family: liberation-bold;
+    letter-spacing: -0.022em;
+    color: #FFDDAA;
+}
+
+h1 {
+    font-family: baskerville; 
+    /* color: #BBF3FF; */
+    color: #FFDDAA;
+}
+
+code {
+    font-family: victor-mono;
+    color: #FFDDAA;
+}
+
+a {
+    color: #BB9966;
+}
+a:hover {
+    color: #AADDFF;
+}
+
+hr {
+    color: #BB9966;
+}
+.fancy-hr {
+    background: linear-gradient(to right, #DB6913, #3388AA);
+    height: 1px;
+    border: 0;
+}
+
+header {
+    width: 100%;
+    /* flex: 0 0 auto; */
+}
+header h1 {
+    padding-left: 20px;
+}
+header a {
+    text-decoration: none;
+}
+
+#container {
+    flex: auto;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+main {
+    padding: 10px;
+    padding-top: 0px;
+}
+
+footer {
+    /* flex-shrink: 0; */
+    width: 100%;
+}
+
+/* hide in page TOC when small screen */
+@media (max-width: 768px) {
+    #inpage-toc {
+        display: none;
+    }
+}
+@media (min-width: 768px) {
+    #menu-toc {
+        display: none;
+    }
+    /* #nav-hamburger { */
+    /*     display: none; */
+    /* } */
+    #nav-hamburger-icon {
+        display: none;
+    }
+}
+#nav-hamburger {
+    display: none;
+}
+#nav-hamburger-icon {
+    position: fixed;
+    right: 12px;
+    top: 25px;
+}
+#nav-hamburger-icon rect {
+    fill: #BB9966;
+}
+
+#nav-hamburger:checked ~ aside {
+    right: -2000px;
+}
+#menu-toc {
+    position: fixed;
+    right: 0;
+}
+
+.TOC h3 {
+    font-family: baskerville;
+}
+.TOC {
+    float: right;
+    padding: 10px;
+    margin: 5px;
+    background-color: #181207;
+    padding-top: 2px;
+    padding-right: 15px;
+    min-width: 250px;
+}
+.TOC a {
+    font-size: 14px;
+    font-family: baskerville;
+    font-weight: 300;
+    /* text-decoration: none; */
+    color: #BB9966;
+}
+.TOC a:hover {
+    color: #BBF3FF;
+}
+.TOC ul {
+    list-style: Square;
+    padding-left: 0px;
+    list-style-position: inside;
+    padding-inline-start: 0;
+}
+.TOC ul li {
+    padding-left: 5px;
+}
+.TOC ul li ul li {
+    padding-left: 20px;
+}
+.TOC ::marker {
+    color: #BB9966;
+}
+
+.backlinks-list {
+    padding: 5px;
+    font-size: 12px;
+}

@@ -96,7 +96,7 @@ def process():
             contents = contents.replace(pattern, replacement)
             file_contents[filename] = contents
 
-    # add backlinks to yaml
+    # add backlinks to yaml and add necessary metadata
     for filename, contents in file_contents.items():
         lines = contents.split("\n")
 
@@ -121,6 +121,11 @@ def process():
         # use name by default if no title
         if not title_found:
             lines.insert(1, f"title: {file_to_name[filename]}")
+
+        # attach the relative path to /res folder (necessary for subfolder files
+        # to find e.g. css)
+        lines.insert(1, f"res_path: {link_relative_to_self(name_to_url[file_to_name[filename]], 'res')}")
+        lines.insert(1, f"index_path: {link_relative_to_self(name_to_url[file_to_name[filename]], 'index')}")
 
         lines.remove("#public ")
 

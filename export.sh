@@ -12,3 +12,5 @@ echo "Processing..."
 process.py
 echo "Rendering..."
 render-all.sh
+echo "Copying resources..."
+copy-resources.sh

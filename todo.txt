@@ -1,3 +1,4 @@
+DONE: find a font!
 TODO: copy images into res folder
 TODO: change formating for image links
 STRT: template html
