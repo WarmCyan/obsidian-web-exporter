@@ -13,14 +13,14 @@
             <h1><a href='$index_path$.html'><span style='color: #AA6633; font-family: baskerville; font-size: 35px;'>Warm</span><span style='font-family: victor-mono; color: #8DD;'>Cyan</span></a></h1>
 
             $if(toc)$
+            <input type="checkbox" id="nav-hamburger" checked />
             <label id='nav-hamburger-icon' for="nav-hamburger">
                 <svg viewBox="0 0 100 80" width="40" height="40">
-                    <rect width="80" height="12"></rect>
-                    <rect y="30" width="80" height="12"></rect>
-                    <rect y="60" width="80" height="12"></rect>
+                    <rect width="80" height="12" rx="5"></rect>
+                    <rect y="30" width="80" height="12" rx="5"></rect>
+                    <rect y="60" width="80" height="12" rx="5"></rect>
                 </svg>
             </label>
-            <input type="checkbox" id="nav-hamburger" checked />
             <aside id='menu-toc'>
                 <nav class="TOC" role="doc-toc">
                 <h3>Contents</h3>

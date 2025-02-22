@@ -89,8 +89,9 @@ a:hover {
 
 hr {
     color: #BB9966;
-    margin-left: 5px;
-    margin-right: 5px;
+    margin: 0;
+    /* margin-left: 5px; */
+    /* margin-right: 5px; */
 }
 .fancy-hr {
     /* background: linear-gradient(to right, #DB6913, #3388AA); */
@@ -104,6 +105,7 @@ hr {
 header {
     width: 100%;
     /* flex: 0 0 auto; */
+    background-color: #191007;
 }
 header h1 {
     padding-left: 20px;
@@ -127,6 +129,7 @@ main {
 footer {
     /* flex-shrink: 0; */
     width: 100%;
+    background-color: #191007;
 }
 
 pre {
@@ -168,18 +171,23 @@ pre {
     top: 25px;
 }
 #nav-hamburger-icon rect {
-    fill: #BB9966;
+    fill: white;
 }
 
 #nav-hamburger:checked ~ aside {
     right: -2000px;
 }
+#nav-hamburger:checked ~ #nav-hamburger-icon rect {
+    fill: #BB9966;
+}
+
 #menu-toc {
     position: fixed;
     right: 0;
 }
 #menu-toc .TOC {
     margin-right: 0px;
+    margin-top: 2px;
 }
 
 .TOC h3 {
@@ -193,8 +201,10 @@ pre {
     /* background-color: #181207; */
     background-color: #191007;
     padding-top: 2px;
-    padding-right: 15px;
+    padding-right: 20px;
+    padding-left: 20px;
     min-width: 250px;
+    margin-top: 15px;
 }
 .TOC a {
     font-size: 14px;
@@ -229,7 +239,7 @@ pre {
 }
 
 .backlinks-list {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     margin-left: 5px;
     padding: 5px;
     font-size: 12px;
@@ -237,7 +247,7 @@ pre {
 }
 
 .time-edit {
-    margin-top: 5px;
+    /* margin-top: 5px; */
     margin-right: 5px;
     font-size: 12px;
     font-family: victor-mono;
