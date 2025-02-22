@@ -43,16 +43,23 @@ body {
     flex-direction: column;
 }
 
-h2, h3, h4, h5, h6 {
+h2, h4, h5, h6 {
     font-family: liberation-bold;
     letter-spacing: -0.022em;
     color: #FFDDAA;
 }
 
+h3 {
+    font-family: liberation-bold;
+    letter-spacing: -0.022em;
+    color: #DB6913;
+}
+
 h1 {
     font-family: baskerville; 
     /* color: #BBF3FF; */
-    color: #FFDDAA;
+    /* color: #FFDDAA; */
+    color: #55AAAA;
 }
 
 code {
@@ -61,7 +68,9 @@ code {
 }
 
 a {
-    color: #88DDFF;
+    /* color: #88DDFF; */
+    /* color: #88DDDD; */
+    color: #66BBBB;
 }
 a:hover {
     color: #BB9966;
@@ -72,16 +81,20 @@ a:hover {
     color: #BB9966;
 }
 .footnote-ref:hover {
-    color: #88DDFF;
+    /* color: #88DDFF; */
+    color: #66BBBB;
 }
 
 hr {
     color: #BB9966;
+    margin-left: 5px;
+    margin-right: 5px;
 }
 .fancy-hr {
     /* background: linear-gradient(to right, #DB6913, #3388AA); */
     /* OLD CYAN WAS: #bbF3FF */
-    background: linear-gradient(to right, #DB6913, #88DDFF);
+    /* background: linear-gradient(to right, #DB6913, #88DDFF); */
+    background: linear-gradient(to right, #DB6913, #55AAAA);
     height: 1px;
     border: 0;
 }
@@ -119,7 +132,9 @@ pre {
     padding: 15px;
     padding-left: 20px;
     padding-right: 20px;
-    border-left: 2px solid #88DDFF;
+    /* border-left: 2px solid #88DDFF; */
+    /* border-left: 4px solid #88DDDD; */
+    border-left: 5px solid #5AA;
 }
 
 /* hide in page TOC when small screen */
@@ -161,6 +176,7 @@ pre {
 
 .TOC h3 {
     font-family: baskerville;
+    color: #FFDDAA;
 }
 .TOC {
     float: right;
@@ -179,7 +195,8 @@ pre {
     color: #BB9966;
 }
 .TOC a:hover {
-    color: #BBF3FF;
+    /* color: #BBF3FF; */
+    color: #66BBBB;
 }
 .TOC ul {
     list-style: Square;
@@ -204,6 +221,7 @@ pre {
 
 .backlinks-list {
     margin-top: 5px;
+    margin-left: 5px;
     padding: 5px;
     font-size: 12px;
     flex: 1 0 auto;
@@ -211,6 +229,7 @@ pre {
 
 .time-edit {
     margin-top: 5px;
+    margin-right: 5px;
     font-size: 12px;
     font-family: victor-mono;
     padding: 5px;

@@ -10,7 +10,7 @@
 
     <body>
         <header>
-            <h1><a href='$index_path$.html'><span style='color: #DB6913; font-family: baskerville; font-size: 35px;'>Warm</span><span style='font-family: victor-mono; color: #BBF3FF;'>Cyan</span></a></h1>
+            <h1><a href='$index_path$.html'><span style='color: #DB6913; font-family: baskerville; font-size: 35px;'>Warm</span><span style='font-family: victor-mono; color: #8DD;'>Cyan</span></a></h1>
 
             $if(toc)$
             <label id='nav-hamburger-icon' for="nav-hamburger">
@@ -49,13 +49,14 @@
             <hr class='fancy-hr' />
             
             <div class='sideways-align'>
+                <p class='backlinks-list'>
                 $if(backlinks)$
-                <p class='backlinks-list'><b>Backlinks: </b>
+                <b>Backlinks: </b>
                 $for(backlinks)$
                 <a href="$backlinks.url$.html">$backlinks.name$</a>&nbsp;|&nbsp;
                 $endfor$
-                </p>
                 $endif$
+                </p>
 
                 <p class='time-edit'>Edited: $edit_time$</p>
             </div>
