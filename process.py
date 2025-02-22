@@ -2,7 +2,9 @@
 
 import re
 import os
+import datetime
 import json
+import zoneinfo
 
 
 def link_relative_to_self(self_url: str, target_url: str) -> str:
@@ -33,6 +35,19 @@ def process():
     name_to_url = {}  # Thing: thing
     file_contents = {}  # Thing.md: ...
     backlinks = {}  # thing: [other-thing, ...] (the actual html links -extension)
+    edit_data = {}  # Thing.md: ...
+
+    with open("notes/editdata.dat", 'r') as infile:
+        edits = infile.readlines()
+        for edit in edits:
+            filename = edit[:edit.index(":")]
+            timedata = edit[edit.index(":") + 1:].strip()
+            print(filename, timedata)
+            timeobj = datetime.datetime.strptime(timedata, "%Y-%m-%d %H:%M:%S %z")
+            timeobj_est = timeobj.astimezone(zoneinfo.ZoneInfo("America/New_York"))
+            timestr_est = timeobj_est.strftime("%Y-%m-%d %H:%M")
+            edit_data[filename] = timestr_est
+            
 
     # process for url properties
     for filename in os.listdir("notes"):
@@ -126,6 +141,7 @@ def process():
         # to find e.g. css)
         lines.insert(1, f"res_path: {link_relative_to_self(name_to_url[file_to_name[filename]], 'res')}")
         lines.insert(1, f"index_path: {link_relative_to_self(name_to_url[file_to_name[filename]], 'index')}")
+        lines.insert(1, f"edit_time: {edit_data[filename]}")
 
         lines.remove("#public ")
 

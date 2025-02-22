@@ -5,6 +5,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="$res_path$/style.css" />
+        <link rel="stylesheet" href="$res_path$/code-syntax-hl.css" />
     </head>
 
     <body>
@@ -46,15 +47,18 @@
 
         <footer>
             <hr class='fancy-hr' />
+            
+            <div class='sideways-align'>
+                $if(backlinks)$
+                <p class='backlinks-list'><b>Backlinks: </b>
+                $for(backlinks)$
+                <a href="$backlinks.url$.html">$backlinks.name$</a>&nbsp;|&nbsp;
+                $endfor$
+                </p>
+                $endif$
 
-            $if(backlinks)$
-            <p class='backlinks-list'><b>Backlinks: </b>
-            $for(backlinks)$
-            <a href="$backlinks.url$.html">$backlinks.name$</a>&nbsp;|&nbsp;
-            $endfor$
-            </p>
-            $endif$
-
+                <p class='time-edit'>Edited: $edit_time$</p>
+            </div>
         </footer>
     </body>
 </html>

@@ -1,11 +1,11 @@
 DONE: find a font!
 TODO: copy images into res folder
 TODO: change formating for image links
-STRT: template html
-TODO: template css
-TODO: copy css into res folder
+DONE: template html
+DONE: template css
+DONE: copy css into res folder
 TODO: publishing script (assume on server)
-TODO: include date modified timestamp for each file
+STRT: include date modified timestamp for each file
     https://serverfault.com/questions/401437/how-to-retrieve-the-last-modification-date-of-all-files-in-a-git-repository
 DONE: remove #public tag
 DONE: footnotes citations?
