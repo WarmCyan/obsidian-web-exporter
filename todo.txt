@@ -1,0 +1,9 @@
+TODO: copy images into res folder
+TODO: change formating for image links
+TODO: template html
+TODO: template css
+TODO: publishing script (assume on server)
+TODO: remove #public tag
+TODO: footnotes citations?
+STRT: manual backlinks (add to data?)
+    TODO: then add to YAML, use in template
