@@ -5,7 +5,6 @@ import os
 import json
 
 
-
 def link_relative_to_self(self_url: str, target_url: str) -> str:
     self_dirs = self_url.split("/")
     target_dirs = target_url.split("/")
@@ -91,7 +90,7 @@ def process():
                 if name_to_url[match] not in backlinks:
                     backlinks[name_to_url[match]] = []
 
-                backlinks[name_to_url[match]].append(link_relative_to_self(name_to_url[match], self_url))
+                backlinks[name_to_url[match]].append((link_relative_to_self(name_to_url[match], self_url), file_to_name[filename]))
             else:
                 replacement = match
             contents = contents.replace(pattern, replacement)
@@ -103,7 +102,7 @@ def process():
 
         backlinks_this = backlinks[name_to_url[file_to_name[filename]]]
         if len(backlinks_this) > 0:
-            backlink_lines = ["backlinks:"] + [f"  - {link}" for link in backlinks_this]
+            backlink_lines = ["backlinks:"] + [f"  - {{url: {link}, name: {name}}}" for link, name in backlinks_this]
 
             if lines[0] != "---":
                 lines.insert(0, "---")
@@ -111,6 +110,16 @@ def process():
 
             for i in range(len(backlink_lines) - 1, -1, -1):
                 lines.insert(1, backlink_lines[i])
+
+        # check for a title in yaml
+        title_found = False
+        for line in lines[1:]:
+            if line.startswith("title:"):
+                title_found = True
+            if line == "---":
+                break
+        if not title_found:
+            lines.insert(1, f"title: {file_to_name[filename]}")
 
         lines.remove("#public ")
 
