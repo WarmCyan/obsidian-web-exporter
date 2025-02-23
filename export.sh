@@ -10,12 +10,12 @@ rm -rf "${script_path}/processed"
 rm -rf "${script_path}/output"
 
 echo "Extracting public notes..."
-extract-public.sh "${notes_path}"
+./extract-public.sh "${notes_path}"
 echo "Processing..."
-process.py
+./process.py
 echo "Rendering..."
-render-all.sh
+./render-all.sh
 echo "Copying resources..."
-copy-resources.sh
+./copy-resources.sh
 echo "Exporting to ${export_path}..."
 rsync -r ${script_path}/output/* ${export_path} --info=progress2
