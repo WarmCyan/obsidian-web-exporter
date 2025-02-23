@@ -5,5 +5,5 @@ rm -rf output
 for file in processed/*.md; do
   mdname=$(basename "${file}")
   echo "${mdname}"
-  render.sh "${mdname}"
+  ./render.sh "${mdname}"
 done
