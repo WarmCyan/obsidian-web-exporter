@@ -18,4 +18,4 @@ render-all.sh
 echo "Copying resources..."
 copy-resources.sh
 echo "Exporting to ${export_path}..."
-rsync -r "${script_path}/output/*" "${export_path}" --info=progress2
+rsync -r ${script_path}/output/* ${export_path} --info=progress2
