@@ -135,6 +135,10 @@ main {
     padding-top: 0px;
 }
 
+main img {
+    max-width: 100%;
+}
+
 footer {
     /* flex-shrink: 0; */
     width: 100%;
@@ -177,7 +181,7 @@ pre {
     display: none;
 }
 #nav-hamburger-icon {
-    position: fixed;
+    position: absolute;
     right: 12px;
     top: 25px;
 }
@@ -186,14 +190,15 @@ pre {
 }
 
 #nav-hamburger:checked ~ aside {
-    right: -2000px;
+    /* right: -2000px; */
+    display: none;
 }
 #nav-hamburger:checked ~ #nav-hamburger-icon rect {
     fill: #BB9966;
 }
 
 #menu-toc {
-    position: fixed;
+    position: absolute;
     right: 0;
 }
 #menu-toc .TOC {

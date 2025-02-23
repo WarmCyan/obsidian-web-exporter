@@ -53,9 +53,8 @@ def process():
     for filename in os.listdir("notes"):
 
         if not filename.endswith(".md"):
-            # TODO: handle images and stuff too
             continue
-        
+
         print(filename)
 
         # by default just do a "safe" filename as url
@@ -94,7 +93,6 @@ def process():
     for filename, contents in file_contents.items():
         self_url = name_to_url[file_to_name[filename]]
 
-        print("\n", filename)
         matches = re.findall(r"\[\[([A-Za-z0-9\-\_\s]*)\]\]", contents)
         for match in matches:
             pattern = f"[[{match}]]"
@@ -108,6 +106,16 @@ def process():
                 backlinks[name_to_url[match]].append((link_relative_to_self(name_to_url[match], self_url), file_to_name[filename]))
             else:
                 replacement = match
+            contents = contents.replace(pattern, replacement)
+            file_contents[filename] = contents
+
+        # TODO: search attachment links
+        img_matches = re.findall(r"\[\[([A-Za-z0-9\-\_\.\s]*\.(jpg|png|svg|JPG|PNG|SVG|txt|pdf))\]\]", contents)
+        for img_match in img_matches:
+            print(img_match)
+            attachment = img_match[0]
+            pattern = f"[[{attachment}]]"
+            replacement = f"[{attachment}]({link_relative_to_self(self_url, 'res/files/' + attachment)})"
             contents = contents.replace(pattern, replacement)
             file_contents[filename] = contents
 
