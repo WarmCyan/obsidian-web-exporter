@@ -6,7 +6,29 @@
     src:
         url("fonts/baskerville/LibreBaskerville-Regular.ttf") format("truetype"),
         local("serif");
+    font-weight: normal;
+    font-style: normal;
 }
+/* libre baskerville is licensed under SIL Open Font License, see
+ * full text at res/fonts/baskerville/LICENSE.txt */
+@font-face {
+    font-family: baskerville;
+    src:
+        url("fonts/baskerville/LibreBaskerville-Bold.ttf") format("truetype"),
+        local("serif");
+    font-weight: bold;
+    font-style: normal;
+}
+/* libre baskerville is licensed under SIL Open Font License, see
+ * full text at res/fonts/baskerville/LICENSE.txt */
+/* @font-face { */
+/*     font-family: baskerville; */
+/*     src: */
+/*         url("fonts/baskerville/LibreBaskerville-Italic.ttf") format("truetype"), */
+/*         local("serif"); */
+/*     font-weight: normal; */
+/*     font-style: italic; */
+/* } */
 
 /* liberation sans is licensed under SIL Open Font License, see
  * full text at res/fonts/liberation/LICENSE.txt */
@@ -129,6 +151,10 @@ header a {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
+    line-height: 1.8;
+}
+#container strong {
+    color: #BF9;
 }
 main {
     padding: 10px;
