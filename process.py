@@ -123,6 +123,11 @@ def process():
     for filename, contents in file_contents.items():
         lines = contents.split("\n")
 
+        print(filename)
+        print("\t", file_to_name[filename])
+        print("\t\t", name_to_url[file_to_name[filename]])
+        if name_to_url[file_to_name[filename]] not in backlinks:
+            backlinks[name_to_url[file_to_name[filename]]] = []
         backlinks_this = backlinks[name_to_url[file_to_name[filename]]]
         if len(backlinks_this) > 0:
             backlink_lines = ["backlinks:"] + [f"  - {{url: {link}, name: {name}}}" for link, name in backlinks_this]
@@ -151,7 +156,15 @@ def process():
         lines.insert(1, f"index_path: {link_relative_to_self(name_to_url[file_to_name[filename]], 'index')}")
         lines.insert(1, f"edit_time: {edit_data[filename]}")
 
-        lines.remove("#public ")
+        try:
+            lines.remove("#public ")
+        except:
+            pass
+        
+        try:
+            lines.remove("#public")
+        except:
+            pass
 
         contents = "\n".join(lines)
         file_contents[filename] = contents
