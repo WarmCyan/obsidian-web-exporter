@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+set -o xtrace
+
+
 notes_path="$1"
 echo "${notes_path}"
 
