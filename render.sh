@@ -4,7 +4,7 @@ script_path="$(dirname $(realpath $0))"
 
 filename=$1
 
-target=$(get-target.py "${filename}")
+target=$(./get-target.py "${filename}")
 target_dirpath=$(dirname "${target}")
 
 mkdir -p "output/${target_dirpath}"
