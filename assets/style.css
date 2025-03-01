@@ -59,7 +59,8 @@ html, body {
 body {
     background-color: #221811;
     /* background-color: #191007; */
-    color: white;
+    /* color: white; */
+    color: #DCA;
     font-family: baskerville;
     
     display: flex;
