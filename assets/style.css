@@ -156,8 +156,8 @@ header a {
     margin-left: auto;
     margin-right: auto;
     width: 100%;
-    padding: 10px;
     margin-top: -30px;
+    overflow-wrap: break-word;
 }
 #container strong {
     color: #BF9;
@@ -191,6 +191,10 @@ pre {
     /* border-left: 2px solid #88DDFF; */
     /* border-left: 4px solid #88DDDD; */
     border-left: 5px solid #5AA;
+}
+
+li {
+    margin-bottom: 5px;
 }
 
 /* hide in page TOC when small screen */
@@ -246,7 +250,7 @@ pre {
 .TOC h3 {
     font-family: baskerville;
     color: #FFDDAA;
-    margin-top: 15px;
+    margin-top: 20px;
 }
 .TOC {
     float: right;
@@ -261,6 +265,7 @@ pre {
     /* margin-top: 25px; */
     margin-top: 50px;
     line-height: 1.8;
+    margin-left: 20px;
 }
 .TOC a {
     font-size: 14px;
