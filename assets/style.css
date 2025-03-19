@@ -101,6 +101,7 @@ code {
     font-family: victor-mono;
     /* color: #FFDDAA; */
     color: white;
+    overflow-x: scroll;
 }
 
 a {
@@ -305,6 +306,7 @@ li {
     padding: 5px;
     font-size: 12px;
     flex: 1 0 auto;
+    overflow-wrap: break-word;
 }
 
 .time-edit {
