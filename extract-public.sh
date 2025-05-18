@@ -32,8 +32,7 @@ rg "#public" --no-heading --sort=path | cut -d : -f 1 | uniq | xargs -d "\n" rg 
 
 # scale down any images with imagemagic
 # (see https://www.imagemagick.org/script/command-line-processing.php#geometry)
-shopt -s nullglob
-for imgfilename in "${script_path}/notes/attachments/*.jpg" ${script_path}/notes/attachments/*.JPG ${script_path}/notes/attachments/*.png ${script_path}/notes/attachments/*.PNG;
+for imgfilename in "${script_path}"/notes/attachments/*.{jpg,JPG,png,PNG};
 do
   echo -e "Checking size of ${imgfilename}..."
   magick "${imgfilename}" -resize "800x800>" "${imgfilename}"
