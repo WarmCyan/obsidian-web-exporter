@@ -30,4 +30,11 @@ done
 rg "#public" --no-heading --sort=path | cut -d : -f 1 | uniq | xargs -d "\n" rg --no-heading -e "\[\[.*\.(jpg|png|svg|JPG|PNG|SVG|txt|pdf)\]\]" | cut -d : -f 2 | sed -e "s/.*\[\[\([a-zA-Z0-9\-\_\.\s]*\)\]\]/\1/g" | xargs -I src cp attachments/src "${script_path}/notes/attachments/"
 
 
+# scale down any images with imagemagic
+# (see https://www.imagemagick.org/script/command-line-processing.php#geometry)
+for imgfilename in "${script_path}"/notes/attachements/*.(jpg|JPG|png|PNG); do
+  convert -resize "800x800>" "${imagefilename}" "${imgfilename}"
+done
+
+
 popd

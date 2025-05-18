@@ -1,3 +1,4 @@
+STRT: scale-down images
 DONE: find a font!
 DONE: copy images into res folder
 DONE: change formating for image links
