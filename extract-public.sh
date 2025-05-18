@@ -34,8 +34,9 @@ rg "#public" --no-heading --sort=path | cut -d : -f 1 | uniq | xargs -d "\n" rg 
 # (see https://www.imagemagick.org/script/command-line-processing.php#geometry)
 for imgfilename in "${script_path}"/notes/attachments/*.{jpg,JPG,png,PNG};
 do
-  echo -e "Checking size of ${imgfilename}..."
-  magick "${imgfilename}" -resize "800x800>" "${imgfilename}"
+  echo -e "Scaling ${imgfilename}..."
+  # magick "${imgfilename}" -resize "800x800>" "${imgfilename}"
+  magick "${imgfilename}" -scale "800x800>" "${imgfilename}"
 done
 
 
