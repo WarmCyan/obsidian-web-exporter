@@ -27,7 +27,7 @@ git ls-tree -r --name-only HEAD | while read filename; do
 done
 
 # extract any images/attachments found (anything with an actual extension)
-rg "#public" --no-heading --sort=path | cut -d : -f 1 | uniq | xargs -d "\n" rg --no-heading -e "\[\[.*\.(jpg|png|svg|JPG|PNG|SVG|txt|pdf)\]\]" | cut -d : -f 2 | sed -r -e "s/.*\[\[\([a-zA-Z0-9\-\_\.\s[:space:]]*\)\]\]/\1/g" | xargs -I src cp attachments/src "${script_path}/notes/attachments/"
+rg "#public" --no-heading --sort=path | cut -d : -f 1 | uniq | xargs -d "\n" rg --no-heading -e "\[\[.*\.(jpg|png|svg|JPG|PNG|SVG|txt|pdf)\]\]" | cut -d : -f 2 | sed -r -e "s/.*\[\[([a-zA-Z0-9\-\_\.\s[:space:]]*)\]\]/\1/g" | xargs -I src cp attachments/src "${script_path}/notes/attachments/"
 
 
 # scale down any images with imagemagic
