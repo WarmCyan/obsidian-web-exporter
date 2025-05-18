@@ -36,7 +36,7 @@ shopt -s nullglob
 for imgfilename in "${script_path}/notes/attachments/*.jpg" ${script_path}/notes/attachments/*.JPG ${script_path}/notes/attachments/*.png ${script_path}/notes/attachments/*.PNG;
 do
   echo -e "Checking size of ${imgfilename}..."
-  magick -resize "800x800>" "${imagefilename}" "${imgfilename}"
+  magick -resize "800x800>" "${imgfilename}" "${imgfilename}"
 done
 
 
