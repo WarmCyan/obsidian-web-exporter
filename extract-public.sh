@@ -36,7 +36,7 @@ for imgfilename in "${script_path}"/notes/attachments/*.{jpg,JPG,png,PNG};
 do
   echo -e "Scaling ${imgfilename}..."
   # magick "${imgfilename}" -resize "800x800>" "${imgfilename}"
-  magick "${imgfilename}" -scale "800x800>" "${imgfilename}"
+  magick "${imgfilename}" -sample "800x800>" "${imgfilename}"
 done
 
 
