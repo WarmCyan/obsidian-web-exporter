@@ -102,7 +102,7 @@ code {
     /* color: #FFDDAA; */
     color: white;
     overflow-x: scroll;
-    display: inline-flex; /* dunno why this works....but neat */
+    /*display: inline-flex;*/ /* dunno why this works....but neat */
     max-width: 100%;
 }
 
