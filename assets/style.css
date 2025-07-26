@@ -104,6 +104,11 @@ code {
     overflow-x: scroll;
     /*display: inline-flex;*/ /* dunno why this works....but neat */
     max-width: 100%;
+    display: inline-block;
+    margin-bottom: -7px;
+}
+div.sourceCode pre.sourceCode {
+    padding-bottom: 7px !important;
 }
 
 a {
